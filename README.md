@@ -4,7 +4,7 @@ Implementing a security check in a kernel device driver typically involves valid
 
 -----
 
-## Header Inclusions
+### Header Inclusions
 
 These headers provide access to kernel APIs:
 
