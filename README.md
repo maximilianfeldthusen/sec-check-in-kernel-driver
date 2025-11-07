@@ -4,7 +4,7 @@ Implementing a security check in a kernel device driver typically involves valid
 
 -----
 
-Header Inclusions
+## Header Inclusions
 
 These headers provide access to kernel APIs:
 
@@ -52,7 +52,7 @@ secureClass / secureDevice: Used to create device node in /dev
 
 kernelBuffer: Internal buffer for read/write operations
 
-File Operations
+## File Operations
 
 secure_open
 
@@ -106,7 +106,7 @@ secureDevice = device_create(...);
 
 Creates a device class and device node (e.g., /dev/securedev)
 
-Module Cleanup
+## Module Cleanup
 
 secure_exit
 
@@ -116,17 +116,17 @@ Unregisters the character device
 
 Frees allocated memory
 
-Module Metadata
+## Module Metadata
 
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("MIT");
 
 MODULE_AUTHOR("Your Name");
 
-MODULE_DESCRIPTION("A secure kernel device driver example");
+MODULE_DESCRIPTION("A secure kernel device driver");
 
 Provides metadata for the module (license, author, description)
 
-Summary
+## Summary
 
 This module:
 
@@ -139,7 +139,7 @@ Safely handles read/write operations
 Cleans up resources on exit
 
 
-To compile and install your Linux kernel device driver code
+## To compile and install your Linux kernel device driver code
 
 Step 1: Prepare Your Environment
 
@@ -219,7 +219,7 @@ Clean up build files:
 
 make clean
 
-Summary
+## Summary
 
 You’ve now compiled, installed, and tested your secure kernel device driver.
 
