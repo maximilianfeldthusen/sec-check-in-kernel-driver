@@ -180,9 +180,11 @@ mkdir securedev
 
 cd securedev
 
+```
+
 Save your code in a file named securedev.c.
 
-Step 3: Create a Makefile
+### Step 3: Create a Makefile
 
 Create a file named Makefile with the following content:
 
