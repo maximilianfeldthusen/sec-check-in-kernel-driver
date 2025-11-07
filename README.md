@@ -136,3 +136,91 @@ Restricts access to privileged users
 Safely handles read/write operations
 
 Cleans up resources on exit
+
+
+To compile and install your Linux kernel device driver code
+
+Step 1: Prepare Your Environment
+
+Ensure you have the following:
+
+A Linux system with kernel headers installed (linux-headers-$(uname -r))
+
+Root access (for installing the module)
+
+A working C compiler (gcc) and make
+
+Step 2: Create the Module Files
+
+Create a directory and add your source code
+
+mkdir securedev
+
+cd securedev
+
+Save your code in a file named securedev.c.
+
+Step 3: Create a Makefile
+
+Create a file named Makefile with the following content:
+
+obj-m += securedev.o
+
+all:
+
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+clean:
+
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+Step 4: Compile the Module
+
+Run:
+
+make
+
+This will generate a file named securedev.ko, which is your kernel module.
+
+Step 5: Install the Module
+
+Load the module
+
+sudo insmod securedev.ko
+
+Check kernel logs
+
+dmesg | tail
+
+You should see messages like:
+
+securedev: device initialized
+
+Step 6: Verify Device Creation
+
+Check if the device node exists:
+
+ls /dev/securedev
+
+If not, create it manually:
+
+sudo mknod /dev/securedev c 0
+
+Replace with the number printed in dmesg.
+
+Step 7: Uninstall the Module
+
+To remove the module:
+
+sudo rmmod securedev
+
+Clean up build files:
+
+make clean
+
+Summary
+
+You’ve now compiled, installed, and tested your secure kernel device driver.
+
+
+
