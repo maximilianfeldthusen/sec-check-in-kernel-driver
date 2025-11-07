@@ -24,6 +24,8 @@ linux/slab.h: Kernel memory allocation (kmalloc, kfree)
 
 linux/cred.h and linux/sched.h: Credential and process info for permission checks
 
+-----
+
 Constants and Globals
 
 #define DEVICE_NAME "securedev"
@@ -54,6 +56,8 @@ kernelBuffer: Internal buffer for read/write operations
 
 ## File Operations
 
+```console
+
 secure_open
 
 if (!capable(CAP_SYS_ADMIN)) {
@@ -61,6 +65,8 @@ if (!capable(CAP_SYS_ADMIN)) {
     return -EPERM;
 
 }
+
+```
 
 Checks if the calling process has administrative privileges (CAP_SYS_ADMIN)
 
@@ -84,7 +90,11 @@ Logs when the device is closed
 
 File Operations Structure
 
+```console
+
 static struct file_operations fops = { ... };
+
+```
 
 Maps system calls (open, read, write, release) to driver functions
 
@@ -92,7 +102,11 @@ Module Initialization
 
 secure_init
 
+```console
+
 kernelBuffer = kmalloc(BUFFER_SIZE, GFP_KERNEL);
+
+```
 
 Allocates memory for the internal buffer
 
@@ -100,9 +114,14 @@ majorNumber = register_chrdev(0, DEVICE_NAME, &fops);
 
 Registers the character device and assigns a major number
 
+
+```console
+
 secureClass = class_create(...);
 
 secureDevice = device_create(...);
+
+```
 
 Creates a device class and device node (e.g., /dev/securedev)
 
@@ -165,21 +184,39 @@ Step 3: Create a Makefile
 
 Create a file named Makefile with the following content:
 
+```console
+
 obj-m += securedev.o
+
+```
 
 all:
 
+
+```console
+
     make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+```
 
 clean:
 
+```console
+
     make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+
+```
 
 Step 4: Compile the Module
 
 Run:
 
+```console
+
 make
+
+```
 
 This will generate a file named securedev.ko, which is your kernel module.
 
@@ -187,11 +224,21 @@ Step 5: Install the Module
 
 Load the module
 
+
+```console
+
 sudo insmod securedev.ko
+
+
+```
 
 Check kernel logs
 
+```console
+
 dmesg | tail
+
+```
 
 You should see messages like:
 
@@ -201,11 +248,20 @@ Step 6: Verify Device Creation
 
 Check if the device node exists:
 
+```console
+
 ls /dev/securedev
+
+
+```console
 
 If not, create it manually:
 
+```console
+
 sudo mknod /dev/securedev c 0
+
+```
 
 Replace with the number printed in dmesg.
 
@@ -213,11 +269,19 @@ Step 7: Uninstall the Module
 
 To remove the module:
 
+```console
+
 sudo rmmod securedev
+
+```
 
 Clean up build files:
 
+```console
+
 make clean
+
+```
 
 ## Summary
 
