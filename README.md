@@ -125,7 +125,7 @@ secureDevice = device_create(...);
 
 Creates a device class and device node (e.g., /dev/securedev)
 
-## Module Cleanup
+### Module Cleanup
 
 secure_exit
 
@@ -135,7 +135,7 @@ Unregisters the character device
 
 Frees allocated memory
 
-## Module Metadata
+### Module Metadata
 
 MODULE_LICENSE("MIT");
 
@@ -145,7 +145,7 @@ MODULE_DESCRIPTION("A secure kernel device driver");
 
 Provides metadata for the module (license, author, description)
 
-## Summary
+### Summary
 
 This module:
 
@@ -158,7 +158,7 @@ Safely handles read/write operations
 Cleans up resources on exit
 
 
-## To compile and install your Linux kernel device driver code
+### To compile and install your Linux kernel device driver code
 
 ### Step 1: Prepare Your Environment
 
@@ -287,7 +287,7 @@ make clean
 
 ```
 
-## Summary
+### Summary
 
 You’ve now compiled, installed, and tested your secure kernel device driver.
 
