@@ -26,7 +26,7 @@ linux/cred.h and linux/sched.h: Credential and process info for permission check
 
 -----
 
-Constants and Globals
+### Constants and Globals
 
 #define DEVICE_NAME "securedev"
 
@@ -54,7 +54,7 @@ secureClass / secureDevice: Used to create device node in /dev
 
 kernelBuffer: Internal buffer for read/write operations
 
-## File Operations
+### File Operations
 
 ```console
 
@@ -174,6 +174,8 @@ Step 2: Create the Module Files
 
 Create a directory and add your source code
 
+```console
+
 mkdir securedev
 
 cd securedev
@@ -208,7 +210,7 @@ clean:
 
 ```
 
-Step 4: Compile the Module
+### Step 4: Compile the Module
 
 Run:
 
@@ -220,7 +222,7 @@ make
 
 This will generate a file named securedev.ko, which is your kernel module.
 
-Step 5: Install the Module
+### Step 5: Install the Module
 
 Load the module
 
