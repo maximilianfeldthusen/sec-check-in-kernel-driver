@@ -253,7 +253,7 @@ Check if the device node exists:
 ls /dev/securedev
 
 
-```console
+```
 
 If not, create it manually:
 
