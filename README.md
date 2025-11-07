@@ -72,19 +72,19 @@ Checks if the calling process has administrative privileges (CAP_SYS_ADMIN)
 
 Denies access if not authorized
 
-secure_read
+### secure_read
 
 copy_to_user(buffer, kernelBuffer, to_copy)
 
 Copies data from kernel space to user space safely
 
-secure_write
+### secure_write
 
 copy_from_user(kernelBuffer, buffer, to_copy)
 
 Copies data from user space to kernel space safely
 
-secure_release
+### secure_release
 
 Logs when the device is closed
 
@@ -98,7 +98,7 @@ static struct file_operations fops = { ... };
 
 Maps system calls (open, read, write, release) to driver functions
 
-Module Initialization
+### Module Initialization
 
 secure_init
 
@@ -160,7 +160,7 @@ Cleans up resources on exit
 
 ## To compile and install your Linux kernel device driver code
 
-Step 1: Prepare Your Environment
+### Step 1: Prepare Your Environment
 
 Ensure you have the following:
 
@@ -170,7 +170,7 @@ Root access (for installing the module)
 
 A working C compiler (gcc) and make
 
-Step 2: Create the Module Files
+### Step 2: Create the Module Files
 
 Create a directory and add your source code
 
@@ -246,7 +246,7 @@ You should see messages like:
 
 securedev: device initialized
 
-Step 6: Verify Device Creation
+### Step 6: Verify Device Creation
 
 Check if the device node exists:
 
@@ -267,7 +267,7 @@ sudo mknod /dev/securedev c 0
 
 Replace with the number printed in dmesg.
 
-Step 7: Uninstall the Module
+### Step 7: Uninstall the Module
 
 To remove the module:
 
