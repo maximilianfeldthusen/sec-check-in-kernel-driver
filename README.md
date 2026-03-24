@@ -5,11 +5,11 @@ Here’s a **clean explanation + GitHub-ready Markdown version** of your Linux k
 
 ---
 
-# 🧠 Explanation (What this code does)
+## Explanation (What this code does)
 
 This is a **Linux kernel character device driver** called `securedev` with built-in **security and safety features**.
 
-## 🔑 Core Idea
+## Core Idea
 
 It creates a device file (e.g. `/dev/securedev`) that:
 
@@ -20,7 +20,7 @@ It creates a device file (e.g. `/dev/securedev`) that:
 
 ---
 
-## ⚙️ Key Components Explained
+##  Key Components Explained
 
 ### 1. Device Setup
 
@@ -36,7 +36,7 @@ It creates a device file (e.g. `/dev/securedev`) that:
 
 ---
 
-### 2. Security (Important 🔒)
+### 2. Security (Important )
 
 #### Root-only access
 
@@ -96,7 +96,7 @@ copy_from_user(...)
 memset(kernelBuffer + to_copy, 0, BUFFER_SIZE - to_copy);
 ```
 
-👉 Prevents **stale data leakage**
+ Prevents **stale data leakage**
 
 ---
 
@@ -110,15 +110,15 @@ memset(kernelBuffer + to_copy, 0, BUFFER_SIZE - to_copy);
 
 ## ⚠️ Security Best Practices Used
 
-* ✅ Capability-based access control (`CAP_SYS_ADMIN`)
-* ✅ Mutex locking (race condition protection)
-* ✅ Zeroed memory (`kzalloc`)
-* ✅ Buffer clearing (`memset`)
-* ✅ Safe user/kernel copy APIs
+*  Capability-based access control (`CAP_SYS_ADMIN`)
+*  Mutex locking (race condition protection)
+* Zeroed memory (`kzalloc`)
+* Buffer clearing (`memset`)
+*  Safe user/kernel copy APIs
 
 ---
 
-# 📄 GitHub-Ready Markdown (README style)
+#  GitHub-Ready Markdown (README style)
 
 # Secure Linux Character Device Driver (`securedev`)
 
@@ -135,10 +135,10 @@ This project implements a **secure Linux kernel character device driver** with m
 
 ## Features
 
-* 🔒 **Access Control** – Only privileged users can open the device
-* 🧵 **Thread Safety** – Mutex-protected read/write
-* 🧠 **Memory Safety** – Uses `kzalloc` and safe copy APIs
-* 🧹 **Secure Cleanup** – Prevents memory leaks
+*  **Access Control** – Only privileged users can open the device
+*  **Thread Safety** – Mutex-protected read/write
+*  **Memory Safety** – Uses `kzalloc` and safe copy APIs
+*  **Secure Cleanup** – Prevents memory leaks
 
 ---
 
@@ -172,7 +172,7 @@ securedev.c
 
 ## Key Functions
 
-### 🔐 Access Control
+### Access Control
 
 ```c
 static bool is_root_user(void) {
@@ -184,7 +184,7 @@ static bool is_root_user(void) {
 
 ---
 
-### 📂 Open
+###  Open
 
 ```c
 static int secure_open(struct inode *inodep, struct file *filep)
@@ -195,7 +195,7 @@ static int secure_open(struct inode *inodep, struct file *filep)
 
 ---
 
-### 📖 Read
+### Read
 
 ```c
 static ssize_t secure_read(...)
@@ -207,7 +207,7 @@ static ssize_t secure_read(...)
 
 ---
 
-### ✍️ Write
+###  Write
 
 ```c
 static ssize_t secure_write(...)
@@ -218,7 +218,7 @@ static ssize_t secure_write(...)
 
 ---
 
-### 🔓 Release
+###  Release
 
 ```c
 static int secure_release(...)
