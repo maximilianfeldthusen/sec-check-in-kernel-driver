@@ -105,7 +105,7 @@ memset(kernelBuffer + to_copy, 0, BUFFER_SIZE - to_copy);
 
 ---
 
-## ⚠️ Security Best Practices Used
+##  Security Best Practices Used
 
 *  Capability-based access control (`CAP_SYS_ADMIN`)
 *  Mutex locking (race condition protection)
@@ -115,9 +115,7 @@ memset(kernelBuffer + to_copy, 0, BUFFER_SIZE - to_copy);
 
 ---
 
-#  GitHub-Ready Markdown (README style)
-
-# Secure Linux Character Device Driver (`securedev`)
+## Secure Linux Character Device Driver (`securedev`)
 
 ## Overview
 
