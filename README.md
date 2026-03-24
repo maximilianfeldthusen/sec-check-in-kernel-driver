@@ -298,15 +298,9 @@ MIT
 
 ---
 
-## Author
+## Website 
 
-Updated by AI Assistant
+https://mafeforge.com
 
----
 
-If you want, I can also:
-
-* add a **Makefile**
-* show **how to test with multiple processes (race condition demo)**
-* or extend this into a **real secure IPC mechanism**
 
