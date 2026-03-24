@@ -1,8 +1,5 @@
 ## sec-check-in-kernel-driver
 
-
-Here’s a **clean explanation + GitHub-ready Markdown version** of your Linux kernel module code.
-
 ---
 
 ## Explanation (What this code does)
